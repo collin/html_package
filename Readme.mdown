@@ -3,3 +3,44 @@
 ### Doesn't really manage your packages. But spiders across the web to find and load your dependencies.
 
 Details to come.
+
+Here is a sample html_package:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content= "text/package+html; charset=UTF-8"
+  <title>Alpha Simprini</title>
+  <meta name="author" content="Collin Miller">
+  <meta name="version" content="0.5.0">
+  <meta name="description" content="
+    Alpha Simprini is a browser application framework. 
+    It is a terrible awful mish-mash of ideas from Backbone and SproutCore/Ember.js
+  ">
+
+  <link rel="dependency" type="text/package+html" href="https://github.com/collin/pathology/blob/master/pathology.html">
+  <link rel="dependency" type="text/package+html" href="https://github.com/collin/taxi/blob/master/taxi.html">
+
+  <link rel="dependency" type="text/spade+javascript" href="https://github.com/collin/alpha_simprini/blob/master/dist/vendor/fleck-spade.js">
+  <link rel="dependency" type="text/spade+javascript" href="https://github.com/collin/alpha_simprini/blob/master/dist/vendor/jquery-spade.js">
+  <link rel="self" type="text/spade+javascript" href="https://github.com/collin/alpha_simprini/blob/master/dist/alpha_siprini-spade.js">
+
+</head>
+<body>
+
+  <h1> Alpha Simprini</h1>
+
+  <p>
+    Alpha Simprini is a browser application framework. 
+    It is a terrible awful mish-mash of ideas from Backbone and SproutCore/Ember.js
+  </p>
+
+  <section id="authors">
+    <h1>Authors</h1>
+    <a href="mailto:collintmiller@gmail.com">Collin Miller</a>
+  </section>
+
+</body>
+</html>
+```

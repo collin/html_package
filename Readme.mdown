@@ -10,7 +10,7 @@ Here is a sample html_package:
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content= "text/package+html; charset=UTF-8"
+  <meta http-equiv="Content-Type" content= "text/package+html; charset=UTF-8">
   <title>Alpha Simprini</title>
   <meta name="author" content="Collin Miller">
   <meta name="version" content="0.5.0">

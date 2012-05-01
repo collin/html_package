@@ -1,4 +1,3 @@
-require "open-uri"
 require "nokogiri"
 require "colored"
 
@@ -12,21 +11,28 @@ module HTMLPackage
     SCRIPTS =  "[type='#{JAVASCRIPT}']"
     SPADES =  "[type='#{SPADE}']"
 
-    SELF = "[rel=self]"
-    DEPENDENCY = "[rel=dependency]"
+    SELF = "[rel='self']"
+    DEPENDENCY = "[rel='dependency']"
+    DEVELOPMENT_DEPENDENCY = "[rel$='dependency']"
 
-    def self.open(uri, resource_type=SPADES)
+    def self.open(uri, resource_type=SPADES, development = false)
       puts "opening package: #{uri.green}"
-      new Nokogiri::HTML(Kernel.open uri), resource_type
+      new Nokogiri::HTML(Kernel.open uri), resource_type, development
     rescue OpenURI::HTTPError => e
       puts "failed: GET #{uri.red}"
       puts "        #{e.class.name.bold} #{e.message.red.bold}"
       puts
     end
 
-    def initialize(document, resource_type)
+    def initialize(document, resource_type, development)
       @document = document
       @resource_type = resource_type
+      @development = development
+      if @development
+        @dependency_type = DEVELOPMENT_DEPENDENCY
+      else
+        @dependency_type = DEPENDENCY
+      end
     end
 
     def own_files
@@ -35,17 +41,17 @@ module HTMLPackage
 
     def dependency_packages
       @dependency_packages ||= begin
-        links(DEPENDENCY, PACKAGES).map do |package_link|
+        links(@dependency_type, PACKAGES).map do |package_link|
           href = package_link[:href]
           puts "dependency: #{href.blue}"
-          HTMLPackage::Package.open(href, @resource_type)
+          HTMLPackage::Package.open(href, @resource_type, @dependency_type)
         end      
       end.compact
     end
 
     def dependency_files
       links = []
-      links += direct_links = links(DEPENDENCY, @resource_type).map{|link| link[:href]} 
+      links += direct_links = links(@dependency_type, @resource_type).map{|link| link[:href]} 
       
       dependency_packages.each do |package|
         links += package.all_files

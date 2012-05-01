@@ -1,5 +1,5 @@
 require "pathname"
-require "file_utils"
+require "fileutils"
 
 module HTMLPackage
   class Loader

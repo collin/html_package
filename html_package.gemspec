@@ -3,7 +3,7 @@ $:.unshift lib unless $:.include?(lib)
  
 Gem::Specification.new do |s|
   s.name        = "html_package"
-  s.version     = "0.0.4"
+  s.version     = "0.0.5"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Collin Miller"]
   s.email       = ["collintmiller@gmail.com"]
@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
   s.executables  = ['hip']
   s.require_path = 'lib'
 
-  s.add_dependency "colored", "~> 1.2"
-  s.add_dependency "thor", "~> 0.15.0"
+  s.add_dependency "colored", ">= 1.2"
+  s.add_dependency "thor", ">= 0.14"
 end

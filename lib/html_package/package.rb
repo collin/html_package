@@ -1,5 +1,4 @@
 require "nokogiri"
-require "colored"
 
 module HTMLPackage
   class Package

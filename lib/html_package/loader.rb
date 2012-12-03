@@ -11,6 +11,7 @@ module HTMLPackage
     end
 
     def load_file(uri, out_dir)
+      return if uri == nil
       puts "loading: #{uri.blue}"
       Thread.new do
         begin
@@ -40,7 +41,7 @@ module HTMLPackage
         load_file(uri, @out_dir)
       end
 
-      threads.map(&:join)
+      threads.map{|thread| thread and thread.join }
     end
   end
 end

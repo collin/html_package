@@ -61,3 +61,43 @@ task :vendor => :dist do
   system "hip install --file=dist/alpha_simprini.html --out=./vendor --dev"
 end
 ```
+
+```
+hip install --file=dist/alpha_simprini.html --out=./vendor --dev
+WARNING: Nokogiri was built against LibXML version 2.7.3, but has dynamically loaded 2.7.8
+opening package: dist/alpha_simprini.html
+dependency: http://cloud.github.com/downloads/collin/pathology/pathology-0.4.1.html
+opening package: http://cloud.github.com/downloads/collin/pathology/pathology-0.4.1.html
+dependency: http://cloud.github.com/downloads/collin/knead/knead-0.3.3.html
+opening package: http://cloud.github.com/downloads/collin/knead/knead-0.3.3.html
+dependency: http://cloud.github.com/downloads/collin/taxi/taxi-0.6.0.html
+opening package: http://cloud.github.com/downloads/collin/taxi/taxi-0.6.0.html
+dependency: http://cloud.github.com/downloads/collin/pathology/pathology-0.4.1.html
+opening package: http://cloud.github.com/downloads/collin/pathology/pathology-0.4.1.html
+loading: http://cloud.github.com/downloads/collin/alpha_simprini/alpha_simprini-0.5.0-spade.js
+loading: http://spader.herokuapp.com/spades/jwerty-0.3.0.js
+loading: http://cloud.github.com/downloads/collin/pathology/pathology-0.4.1.html
+loading: http://cloud.github.com/downloads/collin/knead/knead-0.3.3.html
+loading: http://cloud.github.com/downloads/collin/taxi/taxi-0.6.0.html
+loading: http://spader.herokuapp.com/spades/fleck-0.5.1.js
+loading: http://spader.herokuapp.com/spades/sharejs-0.5.0-pre.js
+loading: http://spader.herokuapp.com/spades/sharejs.json-0.5.0-pre.js
+loading: http://spader.herokuapp.com/spades/bcsocket-0.4.0.js
+loading: http://spader.herokuapp.com/spades/rangy-core-1.2.3.js
+loading: http://spader.herokuapp.com/spades/sinon-1.3.4.js
+loading: http://spader.herokuapp.com/spades/sinon-qunit-1.0.0.js
+loading: http://cloud.github.com/downloads/collin/pathology/pathology-0.4.1-spade.js
+loading: http://spader.herokuapp.com/spades/underscore-1.3.3.js
+loading: http://spader.herokuapp.com/spades/jquery-1.7.2.js
+loading: http://spader.herokuapp.com/spades/coffeekup-0.3.1edge.js
+loading: http://spader.herokuapp.com/minispade.js
+loading: http://cloud.github.com/downloads/collin/knead/knead-0.3.2-spade.js
+loading: http://cloud.github.com/downloads/collin/taxi/taxi-0.6.0-spade.js
+loading: http://spader.dev/spades/underscore-1.3.3.js
+failed: GET http://spader.herokuapp.com/spades/sinon-qunit-1.0.0.js
+        OpenURI::HTTPError 404 Not Found 
+
+failed: GET http://spader.herokuapp.com/spades/sinon-1.3.4.js
+        OpenURI::HTTPError 404 Not Found 
+
+```

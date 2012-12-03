@@ -29,18 +29,14 @@ Here is a sample html_package:
 </head>
 <body>
 
-  <h1> Alpha Simprini</h1>
+  # Alpha Simprini
 
-  <p>
-    Alpha Simprini is a browser application framework. 
-    It is a terrible awful mish-mash of ideas from Backbone and SproutCore/Ember.js
-  </p>
+  Alpha Simprini is a browser application framework. 
+  It is a terrible awful mish-mash of ideas from Backbone and SproutCore/Ember.js
 
-  <section id="authors">
-    <h1>Authors</h1>
-    <a href="mailto:collintmiller@gmail.com">Collin Miller</a>
-  </section>
-
+  ## authors
+  * <a href="mailto:collintmiller@gmail.com"> Collin Miller </a>
+  
 </body>
 </html>
 ```

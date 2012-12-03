@@ -40,3 +40,24 @@ Here is a sample html_package:
 </body>
 </html>
 ```
+
+```
+gem install 'html_package'
+```
+
+```
+hip
+WARNING: Nokogiri was built against LibXML version 2.7.3, but has dynamically loaded 2.7.8
+Tasks:
+  hip help [TASK]                                                                     # Describe available tasks or one specific task
+  hip install --file=(path or url to package file) --out=(path to dir to install to)  # installs a package
+```
+
+Don't worry if the spirit ghost of Nokogiri rumbles. (or maybe do, I don't think about it)
+
+```rb
+desc "Install development dependencies with hip"
+task :vendor => :dist do
+  system "hip install --file=dist/alpha_simprini.html --out=./vendor --dev"
+end
+```
